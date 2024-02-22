@@ -1,7 +1,7 @@
 
-# UniNF-e FoxPro
+# UniNFe FoxPro
 
-Classe para realizar a integração com a DLL do UniNF-e utilizando Visual FoxPro.
+Classe para realizar a integração com a DLL do UniNFe utilizando Visual FoxPro.
 
 ## Instalação
 
