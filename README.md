@@ -33,7 +33,7 @@ Todas as funções retornam um objeto com as seguintes propriedades
 Instanciar a Classe ou adicionar ao form
 
 ```Cobol
-  objUninfe = NEWOBJECT("nfe","c:\clientes\uninfe_foxpro\uninfe")
+  objUninfe = NEWOBJECT("nfe","c:\uninfe_foxpro\uninfe")
 ```
 
 Configurações Iniciais
