@@ -33,7 +33,7 @@ Todas as funções retornam um objeto com as seguintes propriedades
 Instanciar a Classe ou adicionar ao form
 
 ```Cobol
-  objUninfe = NEWOBJECT("nfe","c:\clientes\uninfe_foxpro\uninfe")
+  objUninfe = NEWOBJECT("nfe","c:\uninfe_foxpro\uninfe")
 ```
 
 Configurações Iniciais
@@ -69,6 +69,27 @@ cMotivo  = "Nome da transportadora incorreto; Segue o nome correto: Joao do Fret
 nSequenciaCCe  = 3
 
 ret = thisform.nfe1.carta_correcao(chaveNFe , cMotivo , nSeqCCe )
-thisform.retorno(ret.Mensagem)
+?ret.Mensagem
+IF ret.Sucesso
+   ?"Protocolo: " + ret.Protocolo
+endif 
+
+```
+
+### Cancelamento
+```Cobol
+chaveNFe     = "00000000000000000000000000000000000000000000"
+protocoloNFe = "000000000000000"
+cMotivo      = "Nota Fiscal Incorreta"
+
+ret = thisform.nfe1.cancelar(chaveNFe, protocoloNFe, cMotivo)
+
+IF ret.Sucesso
+   ?"Cancelamento Aprovado: " + str(ret.Codigo)
+   ?ret.Protocolo
+else
+   ?"Cancelamento Rejeitado"
+   ?ret.Mensagem
+endif 
 
 ```
