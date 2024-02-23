@@ -68,7 +68,7 @@ chaveNFe = "00000000000000000000000000000000000000000000"
 cMotivo  = "Nome da transportadora incorreto; Segue o nome correto: Joao do Frete"
 nSequenciaCCe  = 3
 
-ret = thisform.nfe1.carta_correcao(chaveNFe , cMotivo , nSeqCCe )
+ret = objUninfe.carta_correcao(chaveNFe , cMotivo , nSeqCCe )
 ?ret.Mensagem
 IF ret.Sucesso
    ?"Protocolo: " + ret.Protocolo
@@ -82,7 +82,7 @@ chaveNFe     = "00000000000000000000000000000000000000000000"
 protocoloNFe = "000000000000000"
 cMotivo      = "Nota Fiscal Incorreta"
 
-ret = thisform.nfe1.cancelar(chaveNFe, protocoloNFe, cMotivo)
+ret = objUninfe.cancelar(chaveNFe, protocoloNFe, cMotivo)
 
 IF ret.Sucesso
    ?"Cancelamento Aprovado: " + str(ret.Codigo)
