@@ -69,7 +69,10 @@ cMotivo  = "Nome da transportadora incorreto; Segue o nome correto: Joao do Fret
 nSequenciaCCe  = 3
 
 ret = thisform.nfe1.carta_correcao(chaveNFe , cMotivo , nSeqCCe )
-thisform.retorno(ret.Mensagem)
+?ret.Mensagem
+IF ret.Sucesso
+   ?"Protocolo: " + ret.Protocolo
+endif 
 
 ```
 
