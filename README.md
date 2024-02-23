@@ -72,3 +72,21 @@ ret = thisform.nfe1.carta_correcao(chaveNFe , cMotivo , nSeqCCe )
 thisform.retorno(ret.Mensagem)
 
 ```
+
+### Cancelamento
+```Cobol
+chaveNFe     = "00000000000000000000000000000000000000000000"
+protocoloNFe = "000000000000000"
+cMotivo      = "Nota Fiscal Incorreta"
+
+ret = thisform.nfe1.cancelar(chaveNFe, protocoloNFe, cMotivo)
+
+IF ret.Sucesso
+   ?"Cancelamento Aprovado: " + str(ret.Codigo)
+   ?ret.Protocolo
+else
+   ?"Cancelamento Rejeitado"
+   ?ret.Mensagem
+endif 
+
+```
