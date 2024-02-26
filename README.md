@@ -68,7 +68,7 @@ chaveNFe = "00000000000000000000000000000000000000000000"
 cMotivo  = "Nome da transportadora incorreto; Segue o nome correto: Joao do Frete"
 nSequenciaCCe  = 3
 
-ret = objUninfe.carta_correcao(chaveNFe , cMotivo , nSeqCCe )
+ret = objUninfe.carta_correcao(chaveNFe , cMotivo , nSequenciaCCe )
 ?ret.Mensagem
 IF ret.Sucesso
    ?"Protocolo: " + ret.Protocolo
