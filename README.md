@@ -125,8 +125,10 @@ ret = objUninfe.consultar_distribuicao(nsu)
 IF ret.Sucesso
    ?"Numero maximo para consulta: "  + objUninfe.max_nsu)
    ?"Numero para proxima consulta: " + objUninfe.ult_nsu)
-   nsu = objUninfe.ult_nsu
-ENDIF 
+   nsu = INT(objUninfe.ult_nsu)
+ELSE
+  ?"Erro ao consultar NSU: " + ret.Mensagem
+ENDIF  
 
 ```
 
