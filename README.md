@@ -93,3 +93,43 @@ else
 endif 
 
 ```
+
+### Manifestação do Destinatário
+```Cobol
+chaveNFe        = "00000000000000000000000000000000000000000000"
+cEvento         = "Ciência da Emissão"
+cJustificativa  = ""
+
+ret = objUninfe.manifestar_nfe(chaveNFe, cEvento, cJustificativa)  
+
+IF ret.Sucesso
+   ?"Manifestação Aprovada: " + ret.Mensagem
+   ?ret.Protocolo
+else
+   ?"Manifestação Rejeitada"
+   ?ret.Mensagem
+endif 
+
+```
+
+### Consultar NSU
+Consulta as notas emitidas contra o CNPJ
+Enviar a primeira consulta com o numero Zero, depois pegar o numero da ultima consulta (ult_nsu) e ir baixando as notas até chegar no NSU Máximo (max_nsu)
+
+```Cobol
+objUninfe.pasta_distribuicao = "C:\arquivos-xml\"
+
+nsu = 0
+ret = objUninfe.consultar_distribuicao(nsu)
+
+IF ret.Sucesso
+   ?"Numero maximo para consulta: "  + objUninfe.max_nsu)
+   ?"Numero para proxima consulta: " + objUninfe.ult_nsu)
+   nsu = INT(objUninfe.ult_nsu)
+ELSE
+  ?"Erro ao consultar NSU: " + ret.Mensagem
+ENDIF  
+
+```
+
+
